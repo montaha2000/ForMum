@@ -34,7 +34,6 @@ public class RegisterActivity extends AppCompatActivity {
     private TextView textView;
     private TextInputLayout edtPassword;
     private TextInputLayout edtFullName;
-    private TextInputLayout edtPhoneNumber;
     private TextInputLayout edtEmail;
 
     FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
@@ -46,7 +45,6 @@ public class RegisterActivity extends AppCompatActivity {
     String name;
     String email;
     String password;
-    String phone;
 
 
     @Override
@@ -69,7 +67,6 @@ public class RegisterActivity extends AppCompatActivity {
         textView = findViewById(R.id.textView);
         edtPassword = findViewById(R.id.edtPassword);
         edtFullName = findViewById(R.id.edtFullName);
-        edtPhoneNumber = findViewById(R.id.edtPhoneNumber);
         edtEmail = findViewById(R.id.edtEmail);
     }
 
@@ -77,7 +74,6 @@ public class RegisterActivity extends AppCompatActivity {
         name = Objects.requireNonNull(edtFullName.getEditText()).getText().toString().trim();
         email = Objects.requireNonNull(edtEmail.getEditText()).getText().toString().trim();
         password = Objects.requireNonNull(edtPassword.getEditText()).getText().toString().trim();
-        phone = Objects.requireNonNull(edtPhoneNumber.getEditText()).getText().toString().trim();
 
         if (email.isEmpty()) {
             edtEmail.setError("Email is required");
@@ -109,13 +105,6 @@ public class RegisterActivity extends AppCompatActivity {
             edtFullName.requestFocus();
             return;
         }
-
-        if (phone.isEmpty()) {
-            edtPhoneNumber.setError("Name is required");
-            edtPhoneNumber.requestFocus();
-            return;
-        }
-
 
         firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
