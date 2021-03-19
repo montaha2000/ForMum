@@ -75,11 +75,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
 
-
             case R.id.feedback:
-
+                intent = new Intent(MainActivity.this, FeedbackActivity.class);
+                startActivity(intent);
                 return true;
-
 
             case R.id.logout:
                 //logout

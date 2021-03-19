@@ -147,14 +147,9 @@ public class RegisterActivity extends AppCompatActivity {
                                 User u = new User();
                                 u.setName(name);
                                 u.setEmail(user.getEmail());
-                                u.setPhone(phone);
 
-                                myRef.child("Users").child(user.getUid()).setValue(u).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void aVoid) {
-                                        Log.i("AFQ", "1");
-                                    }
-                                });
+                                myRef.child("Users").child(user.getUid()).setValue(u).addOnSuccessListener(aVoid ->
+                                        Log.i("AFQ", "1"));
                             }
 
 

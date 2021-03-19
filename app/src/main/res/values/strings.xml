@@ -17,4 +17,5 @@
     <string name="add_to_services">Join Services</string>
     <string name="description">Description</string>
     <string name="rate">rate</string>
+    <string name="desc_helper">Describe your Service/Experience</string>
 </resources>

@@ -5,6 +5,8 @@ public class User {
     String name;
     String email;
     String phone;
+    String desc;
+    int rate;
 
     public User() {
     }
@@ -13,6 +15,14 @@ public class User {
         this.name = name;
         this.email = email;
         this.phone = phone;
+    }
+
+    public User(String name, String email, String phone, String desc, int rate) {
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.desc = desc;
+        this.rate = rate;
     }
 
     public String getName() {
@@ -37,5 +47,21 @@ public class User {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public int getRate() {
+        return rate;
+    }
+
+    public void setRate(int rate) {
+        this.rate = rate;
     }
 }

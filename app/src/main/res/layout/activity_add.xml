@@ -8,7 +8,7 @@
 
 
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnJoin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_20sdp"
@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtRate"
+        app:layout_constraintTop_toBottomOf="@+id/edtPhoneNumber"
         app:layout_constraintVertical_bias="0.264">
 
     </Button>
@@ -39,6 +39,26 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edtPhoneNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:hint="@string/phone_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtRate">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edtRate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -46,6 +66,7 @@
         android:layout_marginTop="46dp"
         android:layout_marginEnd="@dimen/_20sdp"
         android:hint="@string/rate"
+        app:suffixText="/hr"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtDesc">
@@ -65,6 +86,7 @@
         android:layout_marginTop="46dp"
         android:layout_marginEnd="@dimen/_20sdp"
         android:hint="@string/description"
+        app:helperText="@string/desc_helper"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar">
