@@ -27,6 +27,7 @@ public class AddActivity extends AppCompatActivity {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("ForMum");
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
 
     @Override
@@ -62,7 +63,6 @@ public class AddActivity extends AppCompatActivity {
 
     private void AddServiceProvider() {
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         Log.e("afq", user.getEmail() + " name:" + user.getDisplayName());
 
         User u = new User();

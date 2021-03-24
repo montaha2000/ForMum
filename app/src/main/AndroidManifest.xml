@@ -2,29 +2,33 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.afq.formum">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+
     <application
         android:allowBackup="true"
-        android:icon="@drawable/formum"
+        android:icon="@drawable/formumapp"
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_launcher_background"
         android:supportsRtl="true"
         android:theme="@style/Theme.ForMum">
-        <activity android:name=".FeedbackActivity"></activity>
+        <activity android:name=".DetailsActivity"/>
+        <activity android:name=".FeedbackActivity" />
         <activity android:name=".AddActivity" />
         <activity android:name=".AboutActivity" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".MainActivity" />
+
+        <activity android:name=".SplashAct" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainActivity" />
     </application>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

@@ -46,6 +46,7 @@
         android:layout_marginEnd="@dimen/_20sdp"
         android:layout_marginStart="@dimen/_20sdp"
         android:hint="@string/phone_number"
+        app:helperText="@string/phone_helper"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtRate">
