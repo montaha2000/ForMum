@@ -23,7 +23,7 @@
         android:layout_width="411dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:text="name : "
+        android:text="desc : "
         android:textColor="@color/black"
         android:textSize="@dimen/_20sdp"
         app:layout_constraintEnd_toEndOf="parent"

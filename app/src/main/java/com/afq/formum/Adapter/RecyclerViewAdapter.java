@@ -49,7 +49,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         holder.txtDesc.setText(mValues.get(position).getDesc());
         holder.txtName.setText(mValues.get(position).getName());
-        holder.txtRate.setText(String.valueOf(mValues.get(position).getRate()));
+        holder.txtRate.setText(String.valueOf(mValues.get(position).getRate()) + mContext.getResources().getString(R.string.per_hr));
     }
 
     @Override

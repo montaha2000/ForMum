@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import com.afq.formum.Model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
@@ -35,6 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
     private TextInputLayout edtPassword;
     private TextInputLayout edtFullName;
     private TextInputLayout edtEmail;
+    private ProgressBar progress;
 
     FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
@@ -68,6 +68,7 @@ public class RegisterActivity extends AppCompatActivity {
         edtPassword = findViewById(R.id.edtPassword);
         edtFullName = findViewById(R.id.edtFullName);
         edtEmail = findViewById(R.id.edtEmail);
+        progress = findViewById(R.id.progress);
     }
 
     private void RegisterUser() {
@@ -105,11 +106,13 @@ public class RegisterActivity extends AppCompatActivity {
             edtFullName.requestFocus();
             return;
         }
+        progress.setVisibility(View.VISIBLE);
 
         firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        progress.setVisibility(View.GONE);
                         user = firebaseAuth.getCurrentUser();
 
                         if (task.isSuccessful()) {
@@ -134,8 +137,9 @@ public class RegisterActivity extends AppCompatActivity {
                                 });
 
                                 User u = new User();
-                                u.setName(name);
+                                u.setName(user.getDisplayName());
                                 u.setEmail(user.getEmail());
+
 
                                 myRef.child("Users").child(user.getUid()).setValue(u).addOnSuccessListener(aVoid ->
                                         Log.i("AFQ", "1"));

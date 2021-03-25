@@ -46,7 +46,7 @@ public class DetailsActivity extends AppCompatActivity {
         txtDesc.setText(getString(R.string.description) +" : "+desc);
         txtEmail.setText(getString(R.string.email)+ " : "+email);
         txtPhone.setText(getString(R.string.phone_number)+" : "+ phone);
-        txtRate.setText(getString(R.string.rate)+" : "+rate);
+        txtRate.setText(getString(R.string.rate)+" : "+rate + getString(R.string.per_hr));
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
