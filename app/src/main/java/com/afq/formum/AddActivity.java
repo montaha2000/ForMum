@@ -43,12 +43,9 @@ public class AddActivity extends AppCompatActivity {
 
         myToolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white));
 
-        btnJoin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                AddServiceProvider();
-            }
+        btnJoin.setOnClickListener(view -> {
+            AddServiceProvider();
+            finish();
         });
 
     }

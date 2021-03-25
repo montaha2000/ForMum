@@ -1,5 +1,6 @@
 package com.afq.formum;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ public class DetailsActivity extends AppCompatActivity {
     private TextView txtName;
     private Toolbar myToolbar;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,11 +42,11 @@ public class DetailsActivity extends AppCompatActivity {
         String phone = i.getStringExtra("Phone");
         String email= i.getStringExtra("Email");
 
-        txtName.setText("Name : "+name);
-        txtDesc.setText("Description : "+desc);
-        txtEmail.setText("Email : "+email);
-        txtPhone.setText("Phone # : "+ phone);
-        txtRate.setText("Rate : "+rate);
+        txtName.setText(getString(R.string.name)+ " : " + name);
+        txtDesc.setText(getString(R.string.description) +" : "+desc);
+        txtEmail.setText(getString(R.string.email)+ " : "+email);
+        txtPhone.setText(getString(R.string.phone_number)+" : "+ phone);
+        txtRate.setText(getString(R.string.rate)+" : "+rate);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
