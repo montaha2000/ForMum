@@ -51,6 +51,8 @@ public class FeedbackActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<Feedback> mUploads = new ArrayList<>();
 
+    FirebaseAuth mAuth= FirebaseAuth.getInstance();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,9 +67,18 @@ public class FeedbackActivity extends AppCompatActivity {
         ShowData();
         BuildRecycler();
 
-        fabFeedback.setOnClickListener(view ->
-                BuildDialog());
+        fabFeedback.setOnClickListener(view -> {
 
+
+            if (mAuth.getCurrentUser() != null) {
+                BuildDialog();
+            } else {
+                finish();
+                Intent i;
+                i = new Intent(FeedbackActivity.this, LoginActivity.class);
+                startActivity(i);
+            }
+        });
 
     }
 
@@ -96,7 +107,7 @@ public class FeedbackActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
-                Log.i("AFQ",dataSnapshot.toString());
+                Log.i("AFQ", dataSnapshot.toString());
 
                 Feedback upload = dataSnapshot.getValue(Feedback.class);
 

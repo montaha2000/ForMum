@@ -20,10 +20,27 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <TextView
+        android:id="@+id/txtAbout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize"
-        android:text="@string/about_txt"/>
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:padding="@dimen/_20sdp"
+        android:textSize="@dimen/_10ssp"
+        android:text="@string/about_txt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="244dp"
+        android:layout_height="293dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAbout"
+        app:layout_constraintVertical_bias="0.131"
+        app:srcCompat="@drawable/formumabout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,7 +13,6 @@
     <string name="about">About</string>
     <string name="feedback">Feedback</string>
     <string name="logout">Logout</string>
-    <string name="about_txt">This app helps Mums in cases of emergency need of a Babysitter.</string>
     <string name="add_to_services">Join Services</string>
     <string name="description">Description</string>
     <string name="rate">rate</string>
@@ -24,4 +23,6 @@
     <string name="phone_helper">Enter as : +97x xxx xxx xxx</string>
     <string name="details">Details</string>
     <string name="per_hr">/hr</string>
+    <string name="browse">Just Browsing</string>
+    <string name="about_txt"> يهدف هذا التطبيق لمساعدة الام وخاصة الأم العاملة في تربية أطفالها دون الحاجة للذهاب إلى الحضانة فنحن نريد أن نجلب الحضانة إلى البيت وهذا يوفر الوقت والجهد لدى الأم من حيث الذهاب والإياب من وإلى الحضانة.     الاكثر امان الاكثر حماية الاكثر خصوصية         فور ماما وبس ... حضانة لطفلك ببيتك ... لا تحتاري ولا تفكري كتير</string>
 </resources>

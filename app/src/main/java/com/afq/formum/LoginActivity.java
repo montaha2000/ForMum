@@ -23,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextView textView;
     private TextInputLayout edtPassword;
     private TextInputLayout edtEmail;
+    private TextView txtBrowse;
 
     FirebaseAuth mAuth;
 
@@ -36,12 +37,17 @@ public class LoginActivity extends AppCompatActivity {
         textView.setTextColor(getResources().getColor(R.color.purple_200));
 
         txtRegister.setOnClickListener(view -> {
-            Intent i = new Intent(LoginActivity.this,RegisterActivity.class);
+            Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(i);
         });
 
         btnLogin.setOnClickListener(view -> {
             LoginUser();
+        });
+
+        txtBrowse.setOnClickListener(view -> {
+            Intent i =new Intent(LoginActivity.this,MainActivity.class);
+            startActivity(i);
         });
 
     }
@@ -54,6 +60,7 @@ public class LoginActivity extends AppCompatActivity {
         edtEmail = findViewById(R.id.edtEmail);
 
         mAuth = FirebaseAuth.getInstance();
+        txtBrowse = findViewById(R.id.txtBrowse);
     }
 
     private void LoginUser() {
@@ -106,7 +113,6 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(new Intent(this, MainActivity.class));
         }
     }
-
 
 
 }

@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("ForMum");
+    FirebaseAuth mAuth= FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,12 +63,16 @@ public class MainActivity extends AppCompatActivity {
 
         myToolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white));
 
-        fabAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, AddActivity.class);
-                startActivity(i);
+        fabAdd.setOnClickListener(view -> {
+            Intent i;
+            if (mAuth.getCurrentUser() != null) {
+                i = new Intent(MainActivity.this, AddActivity.class);
+            } else {
+                finish();
+                i = new Intent(MainActivity.this,LoginActivity.class);
             }
+            startActivity(i);
+
         });
 
     }
